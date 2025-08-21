@@ -1,0 +1,191 @@
+/* Recommended for you section container */
+body {
+  background-color: #f7fafc;
+  /* A light grey background for the whole section */
+}
+
+.recommended-section,
+.carousel,
+.rec-top,
+h2 {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  padding: 20px;
+  background-color: #f7fafc;
+  /* A light grey background for the whole section */
+}
+
+.recommended-heading {
+  font-size: 2.5rem;
+  font-weight: 600;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  color: #17bc2f;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  ;
+}
+
+.recommended-heading:hover {
+  text-shadow: 0 12px 12px rgba(18, 131, 131, 0.5);
+}
+
+/* Grid for the content cards */
+.recommended-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
+  gap: 20px;
+}
+
+/* Individual card styles */
+.card {
+  position: relative;
+  /* Essential for positioning the pseudo-element */
+  border-radius: 15px 50px;
+  /* The main card's rounded corners */
+  z-index: 1;
+  overflow: hidden;
+  background-color: #ffffff;
+  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+  border-style: solid;
+  border-color: rgba(242, 244, 245, 0.1);
+}
+
+.card:hover {
+  transform: translateY(-3px);
+  border-radius: 15px, 30px;
+  box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.2s ease-in-out;
+  border-image-slice: 1;
+  border-width: 3px;
+  border-style: solid;
+  border-color: rgba(47, 165, 208, 0.1);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .recommended-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.footer-container.img {
+  border-radius: 15px 30px;
+}
+
+/* Footer Styles */
+.footer {
+  background-color: #f7fafc;
+  /* Dark background for the footer */
+  color: #000000;
+  /* White text for contrast */
+  padding: 20px 0;
+  /* Vertical padding */
+  text-align: center;
+  /* Center-align all content */
+  width: 100%;
+  /* Full width */
+}
+
+/* Container to hold footer content */
+.footer-container {
+  max-width: 1200px;
+  /* Limit content width */
+  margin: 0 auto;
+  /* Center the container */
+  padding: 0 20px;
+  /* Horizontal padding */
+}
+
+/* Copyright text */
+.copyright {
+  font-size: 20px;
+  /* Smaller font size for copyright */
+  margin-top: 10px;
+  /* Space above copyright text */
+}
+
+/* Optional: for a "Back to Top" link */
+.back-to-top {
+  color: #000000;
+  text-decoration: none;
+  /* No underline */
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+}
+
+.back-to-top:hover {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+/* carousel ----------------------------------------------------------- */
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  height: 20%;
+}
+
+.carousel-inner {
+  overflow: hidden;
+  margin: auto;
+  padding: 2.5%;
+  display: flex;
+  justify-content: center;
+}
+
+.carousel-img {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 3 / 2;
+  /* Maintains image aspect ratio */
+  width: 40vw;
+  border-radius: 20px;
+  object-fit: cover;
+  top: 0;
+  left: 0;
+  display: none;
+  filter: blur(5px);
+}
+
+.carousel-img.active {
+  opacity: 1;
+  filter: blur(0);
+  display: flex;
+  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+}
+
+.carousel-btn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  color: #fff;
+  font-size: 1.5rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 10px;
+  transition: background 0.3s ease;
+  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  z-index: 10;
+  background: rgba(221, 221, 221, 0.4);
+
+}
+
+.carousel-btn:hover {
+  box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
+  background: rgba(37, 37, 37, 0.2);
+}
+
+.left-btn {
+  left: 10%;
+}
+
+.right-btn {
+  right: 10%;
+}
