@@ -67,7 +67,7 @@ h2 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 900px) {
+@media screen and (orientation: portrait) {
   .recommended-grid {
     grid-template-columns: 1fr;
   }
