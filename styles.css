@@ -71,6 +71,13 @@ h2 {
   .recommended-grid {
     grid-template-columns: 1fr;
   }
+
+  .carousel-btn {
+    display: none;
+  }
+  .carousel-img.active {
+    min-width: 90vw;
+  }
 }
 
 .footer-container.img {
