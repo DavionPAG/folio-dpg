@@ -67,7 +67,7 @@ h2 {
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
+@media (max-width: 900px) {
   .recommended-grid {
     grid-template-columns: 1fr;
   }
