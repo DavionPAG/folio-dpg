@@ -128,6 +128,7 @@ h2 {
 .carousel-inner {
   /* Use flexbox to center content horizontally */
   display: flex;
+  text-align: center;
   justify-content: center;
   align-items: center;
   /* This will vertically center if needed */
@@ -139,14 +140,11 @@ h2 {
 }
 
 .carousel-card {
-  /* Makes the card a flex container to align its children (img and p) */
   display: flex;
-  /* Aligns children horizontally */
-  flex-direction: row;
-  /* Prevents the card from growing or shrinking */
-  flex: 0 0 auto;
+  flex-direction: column;
   align-items: center;
-  column-gap: 3vw;
+  justify-content: center;
+  text-align: center;
 }
 
 .carousel-img {
@@ -165,7 +163,7 @@ h2 {
 .desc {
   /* Makes descriptions visible by default */
   display: block;
-  font-size: 35px;
+  font-size: 2.2vw;
   font-weight: bolder;
 }
 
@@ -189,7 +187,7 @@ h2 {
 
 .carousel-btn {
   position: absolute;
-  top: 50%;
+  bottom: 50%;
   transform: translateY(-50%);
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.5);
@@ -211,11 +209,11 @@ h2 {
 }
 
 .left-btn {
-  left: 4%;
+  left: 10%;
 }
 
 .right-btn {
-  right: 4%;
+  right: 10%;
 }
 
 /* hobbies section */

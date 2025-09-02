@@ -22,19 +22,19 @@ const certs = [
 const jobs = [
   {
     image: "./media/ph_img.png",
-    desc: "SpaceX\nLead Technician\n2024-2025"
+    desc: "SpaceX | Lead Technician | 2024-2025"
   },
   {
     image: "./media/ff_job.jpg",
-    desc: "Fisherman's Finest\nDeep Sea Fishing\n2023-2024"
+    desc: "Fisherman's Finest | Deep Sea Fishing | 2023-2024"
   },
   {
     image: "./media/dg-jbb.JPG",
-    desc: "JB Built\nResidential Carpenter\n2020-2022"
+    desc: "JB Built | Residential Carpenter | 2020-2022"
   },
   {
     image: "./media/af_pic.jpg",
-    desc: "USAF\nLogistics Coordinator\n2012-2019"
+    desc: "USAF | Logistics Coordinator | 2012-2019"
   },
 ]
 
