@@ -1,3 +1,29 @@
+/* heading section */
+
+.heading {
+  display: flex;
+  
+}
+
+.heading p {
+  padding: 5vw;
+  font-size:x-large;
+  color: #4e4e4f;
+  font-weight: 200;
+}
+
+.heading img {
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+  aspect-ratio: 1/1 ;
+  width: 25vw;
+  border-radius: 20px;
+  object-fit: cover;
+  /* Makes images visible by default */
+  filter: none;
+  margin: 5vw;
+}
+
+
 /* Recommended for you section container */
 body {
   background-color: #f7fafc;
@@ -165,6 +191,8 @@ h2 {
   display: block;
   font-size: 2.2vw;
   font-weight: bolder;
+  color: #4e4e4f;
+
 }
 
 .carousel-img.active,
@@ -265,7 +293,8 @@ h2 {
 @media screen and (orientation: portrait) {
 
   .recommended-grid,
-  .hobbies-grid {
+  .hobbies-grid,
+  .heading {
     display: flex;
     flex-direction: column;
   }
@@ -281,6 +310,11 @@ h2 {
   .hobbie-card {
     align-self: center;
     min-width: 80vw;
+  }
+
+  .heading img {
+    align-self: center;
+    min-width: 60vw;
   }
 
   .desc.active {
