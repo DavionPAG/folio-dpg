@@ -21,7 +21,7 @@ const certs = [
 
 const jobs = [
   {
-    image: "./media/ph_img.png",
+    image: "./media/spacex_pic.png",
     desc: "SpaceX | Lead Technician | 2024-2025"
   },
   {
@@ -29,18 +29,18 @@ const jobs = [
     desc: "Fisherman's Finest | Deep Sea Fishing | 2023-2024"
   },
   {
-    image: "./media/dg-jbb.JPG",
+    image: "./media/dg-jbb.jpeg",
     desc: "JB Built | Residential Carpenter | 2020-2022"
   },
   {
-    image: "./media/af_pic.jpg",
+    image: "./media/af_pic.jpeg",
     desc: "USAF | Logistics Coordinator | 2012-2019"
   },
 ]
 
 const hobbies = [
   {
-    image: "./media/soccer_pic.jpg",
+    image: "./media/soccer_pic.png",
   },
   {
     image: "./media/sb_hobbie.jpg",
@@ -49,7 +49,7 @@ const hobbies = [
     image: "./media/hiking_pic.png",
   },
   {
-    image: "./media/chess_pic.jpg",
+    image: "./media/chess_pic.png",
   },
   
 ]
