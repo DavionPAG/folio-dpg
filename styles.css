@@ -17,7 +17,6 @@
   width: 25vw;
   border-radius: 20px;
   object-fit: cover;
-  /* Makes images visible by default */
   filter: none;
   margin: 5vw;
   flex-shrink: 2;
@@ -29,7 +28,6 @@
 /* Recommended for you section container */
 body {
   background-color: #f7fafc;
-  /* A light grey background for the whole section */
 }
 
 .recommended-section,
@@ -39,7 +37,6 @@ h2 {
   font-family: 'Berlin Sans FB';
   padding: 20px;
   background-color: #f7fafc;
-  /* A light grey background for the whole section */
 }
 
 .recommended-heading {
@@ -65,9 +62,7 @@ h2 {
 /* Individual card styles */
 .card {
   position: relative;
-  /* Essential for positioning the pseudo-element */
   border-radius: 15px 50px;
-  /* The main card's rounded corners */
   z-index: 1;
   overflow: hidden;
   background-color: #ffffff;
@@ -95,47 +90,30 @@ h2 {
 }
 
 
-/* .footer-container.img {
-  border-radius: 15px 30px;
-} */
-
 /* Footer Styles */
 .footer {
   background-color: #f7fafc;
-  /* Dark background for the footer */
   color: #000000;
-  /* White text for contrast */
   padding: 20px 0;
-  /* Vertical padding */
   text-align: center;
-  /* Center-align all content */
   width: 100%;
-  /* Full width */
 }
 
 /* Container to hold footer content */
 .footer-container {
   max-width: 1200px;
-  /* Limit content width */
   margin: 0 auto;
-  /* Center the container */
   padding: 0 20px;
-  /* Horizontal padding */
 }
 
-/* Copyright text */
 .copyright {
   font-size: 20px;
-  /* Smaller font size for copyright */
   margin-top: 10px;
-  /* Space above copyright text */
 }
 
-/* Optional: for a "Back to Top" link */
 .back-to-top {
   color: #000000;
   text-decoration: none;
-  /* No underline */
   font-size: 14px;
   display: block;
   margin-top: 10px;
@@ -154,14 +132,11 @@ h2 {
 }
 
 .carousel-inner {
-  /* Use flexbox to center content horizontally */
   display: flex;
   text-align: center;
   justify-content: center;
   align-items: center;
-  /* This will vertically center if needed */
   overflow: hidden;
-  /* Hides horizontal scrollbar */
   margin: auto;
   padding-bottom: 6vh;
 
@@ -181,7 +156,6 @@ h2 {
   width: 40vw;
   border-radius: 20px;
   object-fit: cover;
-  /* Makes images visible by default */
   display: block;
   filter: none;
   opacity: 0.5;
@@ -189,7 +163,6 @@ h2 {
 }
 
 .desc {
-  /* Makes descriptions visible by default */
   display: block;
   font-size: 2.2vw;
   font-weight: bolder;
@@ -205,13 +178,11 @@ h2 {
 
 .carousel-img,
 .desc {
-  /* This ensures that both the image and the description are hidden if they don't have the active class */
   display: none;
 }
 
 .carousel-img.active,
 .desc.active {
-  /* This will make them visible when active */
   display: block;
 }
 
@@ -319,7 +290,4 @@ h2 {
     min-width: 60vw;
   }
 
-  /* .desc.active {
-    display: none;
-  } */
 }
