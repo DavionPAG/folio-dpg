@@ -65,20 +65,13 @@ const hobbieContainer = document.getElementById('hobbies-container')
 
 // Loop through the data and create a card for each item
 certs.forEach(item => {
-  const card = document.createElement('div');
-  card.className = 'card';
 
-  const cardFooter = document.createElement('div');
-  cardFooter.className = 'card-footer';
 
   const imgItem = document.createElement('img');
   imgItem.className = 'cert-image';
   imgItem.src = item.image;
-  card.appendChild(imgItem);
 
-  card.appendChild(cardFooter);
-
-  container.appendChild(card);
+  container.appendChild(imgItem);
 });
 
 document.addEventListener('DOMContentLoaded', (event) => {
@@ -146,7 +139,7 @@ function setupHoverListeners() {
         rotateCarousel('left');
     });
 
-    // Note: I'm using 'click' instead of 'hover' for better UX on touch devices and to prevent rapid, confusing rotation.
+    // Note: using 'click' instead of 'hover' for better UX on touch devices and to prevent rapid, confusing rotation.
     // If you strictly want hover, you would use 'mouseenter' and 'mouseleave' with a debounce/timeout.
 }
 

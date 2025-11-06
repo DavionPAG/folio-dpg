@@ -41,7 +41,7 @@ h2 {
 }
 
 .rec-top > p {
-  font-size: 2em;
+  font-size: 3em;
   font-weight: 400;
   flex-basis: 100%;
   text-align: center;
@@ -62,7 +62,7 @@ li {
   list-style-type: none;
   border-radius: 1.5em;
   font-weight: 400;
-  font-size: 1.1em;
+  font-size: 1.4em;
   background-color: rgba(255, 255, 255, 0.493);
   backdrop-filter: blur(10px) saturate(150%) contrast(150%);
 }
@@ -83,31 +83,27 @@ li {
 .recommended-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  gap: 1.5em;
   justify-items: center;
+  align-content: center;
   width: 100%;
-  height: fit-content;
+  gap: 2em 0;
   }
 
-/* Individual card styles */
-.card {
-  border-radius: 15px 50px;
-  z-index: 1;
+/* Cert styles */
+
+.cert-image {
+  aspect-ratio: 4/3;
+  width: 25vw;
+  border-radius: 20%;
   background-color: #ffffff;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
   transition: transform 0.2s ease-in-out;
   border-style: solid;
-  border-color: rgba(242, 244, 245, 0.1);
-  overflow: hidden;
+  border-color: rgba(219, 221, 222, 0.1);
+  padding: .5em;
 }
 
-.cert-image {
-  aspect-ratio: 1/1;
-  object-fit: contain;
-  width: 25vw;
-}
-
-.card:hover {
+.cert-image:hover {
   transform: translateY(-3px);
   border-radius: 15px, 30px;
   box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
@@ -130,7 +126,7 @@ li {
 /* Container to hold footer content */
 .footer-container {
   max-width: 1200px;
-  margin: 0 auto;
+  margin: 2em auto;
   padding: 0 20px;
 }
 
@@ -174,7 +170,7 @@ li {
 
 /* Side Images (Faded) */
 .image-slot {
-    width: 200px; /* Smaller width for side images */
+    width: 400px; /* Smaller width for side images */
     opacity: 0.4;
     filter: blur(2px) grayscale(50%);
     transform: scale(0.85); /* Slightly smaller */
@@ -182,7 +178,7 @@ li {
 
 /* Center Image (Large and Focused) */
 .image-slot.center {
-    width: 400px; /* Larger width for the center image */
+    width: 500px; /* Larger width for the center image */
     opacity: 1;
     filter: none;
     transform: scale(1);
