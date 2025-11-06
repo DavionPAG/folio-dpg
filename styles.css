@@ -87,6 +87,7 @@ li {
   align-content: center;
   width: 100%;
   gap: 2em 0;
+  margin: 2em;
   }
 
 /* Cert styles */
@@ -201,6 +202,7 @@ li {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1em;
+  margin: 2em;
 }
 
 .hobbie-img {
@@ -240,11 +242,6 @@ li {
 
 /* Responsive adjustments */
 @media screen and (orientation: portrait) {
-
-  ul {
-    display: flex;
-    flex-direction: column;
-  }
 
   li {
     font-size: large;

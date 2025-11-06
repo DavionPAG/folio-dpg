@@ -51,6 +51,7 @@ const hobbies = [
   {
     image: "./media/chess_pic.png",
   },
+
 ]
 
 const images = [
