@@ -13,6 +13,7 @@ body {
   align-items: center;
   min-height: 100vh;
   margin: 0;
+  min-width: 100vw;
 }
 
 .recommended-section,
@@ -97,6 +98,7 @@ li {
   transition: transform 0.2s ease-in-out;
   border-style: solid;
   border-color: rgba(242, 244, 245, 0.1);
+  overflow: hidden;
 }
 
 .cert-image {
@@ -160,7 +162,7 @@ li {
 
 .image-slot {
     /* Basic dimensions for all slots */
-    height: 300px;
+    height: 400px;
     background-size: cover;
     background-position: center;
     transition: all 0.5s ease-in-out; /* Smooth transition for rotation */
@@ -190,7 +192,7 @@ li {
 /* Hover effects for rotation zones (side images) */
 /* The rotation is handled by JS, but a visual cue is helpful */
 .image-slot:hover {
-    box-shadow: 0 8px 25px rgba(0, 0, 255, 0.3);
+    box-shadow: 0 8px 25px rgba(18, 131, 131, 0.4);
 }
 
 /* Optional: Better visual for the hover zones */
@@ -257,14 +259,11 @@ li {
     flex-basis: 50%;
   }
 
-  .recommended-section {
+  .recommended-grid {
     display: grid; /* Enables CSS Grid layout */
     grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
   }
 
-  .recommended-grid {
-    overflow: hidden;
-  }
   .card > img {
     width: 40vw;
   }

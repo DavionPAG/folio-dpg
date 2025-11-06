@@ -51,8 +51,14 @@ const hobbies = [
   {
     image: "./media/chess_pic.png",
   },
-  
 ]
+
+const images = [
+    './media/af_pic.jpeg',
+    './media/dg-jbb.jpeg',
+    './media/ff_job.jpg',
+    './media/spacex_pic.png',
+];
 
 const container = document.getElementById('recommended-container');
 const hobbieContainer = document.getElementById('hobbies-container')
@@ -92,21 +98,9 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // CAROUSEL ----------------------------------------------
 
-// A list of image URLs to use in the carousel
-const images = [
-    'https://picsum.photos/id/10/800/600',
-    'https://picsum.photos/id/20/800/600',
-    'https://picsum.photos/id/30/800/600',
-    'https://picsum.photos/id/40/800/600',
-    'https://picsum.photos/id/50/800/600',
-];
-
 // Get the image slot elements
 const slots = document.querySelectorAll('.image-slot');
-// const container = document.getElementById('carousel-container');
-
-// State to track which image URL is in which slot
-let currentImageIndexes = [0, 1, 2]; // Initial images: [images[0], images[1], images[2]]
+let currentImageIndexes = [0,1,2,3];
 
 /**
  * Updates the background image of each slot based on the currentImageIndexes array.
