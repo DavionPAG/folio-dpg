@@ -9,7 +9,10 @@
 body {
   background-color: rgb(112,128,144);
   font-family: 'Berlin Sans FB';
-  
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
 }
 
 .recommended-section,
@@ -79,32 +82,27 @@ li {
 .recommended-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  gap: 10px;
-  align-items: center;
+  gap: 1.5em;
   justify-items: center;
-}
+  width: 100%;
+  height: fit-content;
+  }
 
 /* Individual card styles */
 .card {
   border-radius: 15px 50px;
   z-index: 1;
-  overflow: hidden;
   background-color: #ffffff;
   box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
-  padding: 20px;
   transition: transform 0.2s ease-in-out;
   border-style: solid;
   border-color: rgba(242, 244, 245, 0.1);
-  width: 25vw;
-  aspect-ratio: 1/1;
-  height: 0;
-  padding-bottom: 63%
 }
 
-.card > img {
-  object-fit: scale-down;
-  display: block;
-  width: 100%;
+.cert-image {
+  aspect-ratio: 1/1;
+  object-fit: contain;
+  width: 25vw;
 }
 
 .card:hover {
@@ -153,94 +151,56 @@ li {
 
 /* carousel ----------------------------------------------------------- */
 
-.carousel-container {
-  position: relative;
-  width: 100%;
-  height: 20%;
+#carousel-container {
+    display: flex;
+    align-items: center;
+    width: 100%; /* Adjust as needed */
+    justify-content: center;
 }
 
-.carousel-inner {
-  display: flex;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  margin: auto;
-  padding-bottom: 6vh;
-
+.image-slot {
+    /* Basic dimensions for all slots */
+    height: 300px;
+    background-size: cover;
+    background-position: center;
+    transition: all 0.5s ease-in-out; /* Smooth transition for rotation */
+    cursor: pointer;
+    margin: 0 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-.carousel-card {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
+/* Side Images (Faded) */
+.image-slot {
+    width: 200px; /* Smaller width for side images */
+    opacity: 0.4;
+    filter: blur(2px) grayscale(50%);
+    transform: scale(0.85); /* Slightly smaller */
 }
 
-.carousel-img {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  aspect-ratio: 5 / 4;
-  width: 40vw;
-  border-radius: 20px;
-  object-fit: cover;
-  display: block;
-  filter: none;
-  opacity: 0.5;
-  transition: opacity 0.5s ease-in-out, filter 0.5s ease-in-out;
+/* Center Image (Large and Focused) */
+.image-slot.center {
+    width: 400px; /* Larger width for the center image */
+    opacity: 1;
+    filter: none;
+    transform: scale(1);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
-.desc {
-  display: block;
-  font-size: 2rem;
-  font-weight: bolder;
-  color: #000000;
-
+/* Hover effects for rotation zones (side images) */
+/* The rotation is handled by JS, but a visual cue is helpful */
+.image-slot:hover {
+    box-shadow: 0 8px 25px rgba(0, 0, 255, 0.3);
 }
 
-.carousel-img.active,
-.desc.active {
-  opacity: 1;
-  filter: blur(0);
+/* Optional: Better visual for the hover zones */
+.image-slot:first-child:hover {
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3); /* Left hover cue */
 }
 
-.carousel-img,
-.desc {
-  display: none;
+.image-slot:last-child:hover {
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.3); /* Right hover cue */
 }
-
-
-.carousel-btn {
-  position: absolute;
-  bottom: 50%;
-  transform: translateY(-50%);
-  backdrop-filter: blur(10px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
-  color: #fff;
-  font-size: 1.5rem;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 10px;
-  transition: background 0.3s ease;
-  text-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
-  z-index: 10;
-  background: rgba(221, 221, 221, 0.4);
-
-}
-
-.carousel-btn:hover {
-  box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
-  background: rgba(37, 37, 37, 0.2);
-}
-
-.left-btn {
-  left: 10%;
-}
-
-.right-btn {
-  right: 10%;
-}
-
 /* hobbies section */
 
 .hobbies-grid {
@@ -284,27 +244,11 @@ li {
   border-color: rgba(47, 165, 208, 0.1);
 }
 
-
-
 /* Responsive adjustments */
 @media screen and (orientation: portrait) {
 
-  .recommended-grid,
-  .heading {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .carousel-btn {
-    display: none;
-  }
-
   ul {
     gap: 5px;
-  }
-
-  .carousel-img.active {
-    min-width: 75vw;
   }
 
   .hobbie-card {
@@ -313,30 +257,23 @@ li {
     flex-basis: 50%;
   }
 
-  .heading > img {
-    align-self: center;
-  }
-
   .recommended-section {
-    align-items: center;
-    justify-items: center;
-    flex-wrap: wrap;
-  }
-  .card {
-    max-width: 40vw;
-    flex-basis: 50%;
+    display: grid; /* Enables CSS Grid layout */
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
   }
 
-  .cert-image {
-    max-width: 40vw;
+  .recommended-grid {
+    overflow: hidden;
+  }
+  .card > img {
+    width: 40vw;
   }
 
   .hobbies-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
+    justify-items: center;
+    align-items: center;
   }
 
-  .hobbie-img {
-    flex-basis: 50%;
-  }
 }

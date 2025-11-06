@@ -92,87 +92,73 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
 // CAROUSEL ----------------------------------------------
 
-document.addEventListener('DOMContentLoaded', () => {
-  const prevBtn = document.getElementById('prevBtn');
-  const nextBtn = document.getElementById('nextBtn');
-  const carouselInner = document.querySelector('.carousel-inner');
+// A list of image URLs to use in the carousel
+const images = [
+    'https://picsum.photos/id/10/800/600',
+    'https://picsum.photos/id/20/800/600',
+    'https://picsum.photos/id/30/800/600',
+    'https://picsum.photos/id/40/800/600',
+    'https://picsum.photos/id/50/800/600',
+];
 
-  let currentIndex = 0;
-  let carouselTimer
+// Get the image slot elements
+const slots = document.querySelectorAll('.image-slot');
+// const container = document.getElementById('carousel-container');
 
-  // Function to create and append image elements to the carousel
-  function createCarouselItems() {
-    jobs.forEach(imgData => {
-      const card = document.createElement('div')
-      const imgElement = document.createElement('img');
-      imgElement.src = imgData.image; 
-      imgElement.alt = 'Carousel image';
-      imgElement.className = 'carousel-img';
+// State to track which image URL is in which slot
+let currentImageIndexes = [0, 1, 2]; // Initial images: [images[0], images[1], images[2]]
 
-      const desc = document.createElement('pre');
-      desc.textContent = imgData.desc
-      desc.className = 'desc'
-
-      card.className = 'carousel-card'
-      card.appendChild(imgElement);
-      card.appendChild(desc)
-      carouselInner.appendChild(card)
+/**
+ * Updates the background image of each slot based on the currentImageIndexes array.
+ */
+function updateCarouselDisplay() {
+    slots.forEach((slot, i) => {
+        const imageUrl = images[currentImageIndexes[i]];
+        slot.style.backgroundImage = `url('${imageUrl}')`;
     });
-  }
-
-  // Function to update which image is active
-function updateCarousel() {
-  const allImages = document.querySelectorAll('.carousel-card');
-
-  allImages.forEach((card, index) => {
-    const cardChildren = card.children;
-    console.log(cardChildren)
-    if (index === currentIndex) {
-      for (const child of cardChildren) {
-        child.classList.add('active');
-      }
-    } else {
-      for (const child of cardChildren) {
-        child.classList.remove('active');
-      }
-    }
-  });
 }
 
-  nextBtn.addEventListener('click', () => {
-    currentIndex++;
-    clearInterval(carouselTimer)
-    timer()
-    if (currentIndex >= jobs.length) {
-      currentIndex = 0;
+/**
+ * Rotates the images in the carousel.
+ * @param {string} direction - 'left' to shift images left (next image becomes center), 'right' to shift images right (previous image becomes center).
+ */
+function rotateCarousel(direction) {
+    if (direction === 'right') {
+        // Shift right: [1, 2, 3] -> [3, 1, 2] (Last image moves to the front)
+        const lastIndex = currentImageIndexes.pop();
+        currentImageIndexes.unshift(lastIndex);
+    } else if (direction === 'left') {
+        // Shift left: [1, 2, 3] -> [2, 3, 1] (First image moves to the back)
+        const firstIndex = currentImageIndexes.shift();
+        currentImageIndexes.push(firstIndex);
     }
-    updateCarousel();
-  });
 
-  prevBtn.addEventListener('click', () => {
-    currentIndex--;
-    clearInterval(carouselTimer)
-    timer()
-    if (currentIndex < 0) {
-      currentIndex = jobs.length - 1;
-    }
-    updateCarousel();
-  });
-  function timer() {
+    updateCarouselDisplay();
+}
 
-    carouselTimer = setInterval(function () {
-      currentIndex++;
-      if (currentIndex >= jobs.length) {
-        currentIndex = 0;
-      }
-      updateCarousel()
-    }, 3500);
-  }
+/**
+ * Adds event listeners to the side images for rotation on hover.
+ */
+function setupHoverListeners() {
+    // Leftmost image slot (Index 0)
+    slots[0].addEventListener('click', () => {
+        // Click on left image rotates to the right
+        rotateCarousel('right');
+    });
 
-  createCarouselItems();
-  updateCarousel();
-  timer()
-});
+    // Rightmost image slot (Index 2)
+    slots[2].addEventListener('click', () => {
+        // Click on right image rotates to the left
+        rotateCarousel('left');
+    });
+
+    // Note: I'm using 'click' instead of 'hover' for better UX on touch devices and to prevent rapid, confusing rotation.
+    // If you strictly want hover, you would use 'mouseenter' and 'mouseleave' with a debounce/timeout.
+}
+
+// Initialize the carousel
+updateCarouselDisplay();
+setupHoverListeners();
 
 // Hobbies section
 hobbies.forEach(item => {
