@@ -1,151 +1,214 @@
+/*
+CSS RESET
+*/
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+body {
+    line-height: 1;
+}
+ol, ul {
+    list-style: none;
+}
+blockquote, q {
+    quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+    content: '';
+    content: none;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+html {
+    box-sizing: border-box;
+    max-width: 100%;
+    overflow-x: hidden; 
+}
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
 /* heading section */
 
 .heading {
-  display: flex;
-  justify-items: center;
+    display: flex;
+    justify-items: center;
 }
 
-/* Recommended for you section container */
 body {
-  background-color: rgb(112,128,144);
-  font-family: 'Berlin Sans FB';
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  margin: 0;
-  min-width: 100vw;
+    background-color: rgb(112,128,144);
+    font-family: 'Berlin Sans FB';
+    margin: 0;
+    max-width: 100%;
+    overflow-x: hidden; 
 }
 
 .recommended-section,
 .carousel,
 .rec-top,
 h2 {
-  font-family: 'Berlin Sans FB';
-  padding: 15px;
+    font-family: 'Berlin Sans FB';
+    padding: 15px;
+    max-width: 100%;
+    margin-bottom: 1em;
+    margin-top: .5em;
 }
 
 .rec-top {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .rec-top > img {
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-  aspect-ratio: 1/1 ;
-  border-radius: 20px;
-  object-fit: cover;
-  margin: 3em;
-  width: 15em;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+    aspect-ratio: 1/1 ;
+    border-radius: 20px;
+    object-fit: cover;
+    margin: 3em;
+    max-width: 80%; 
+    height: auto;
+    width: 15vw;
 }
 
 .rec-top > p {
-  font-size: 3em;
-  font-weight: 400;
-  flex-basis: 100%;
-  text-align: center;
+    font-size: 3em;
+    font-weight: 400;
+    text-align: center;
+    max-width: 100%; 
+    margin-bottom: .5em;
 }
 
 ul {
-  display: grid; /* Enables CSS Grid layout */
-  grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
-  justify-content: center; /* Center the rows of items */
+    display: grid; 
+    grid-template-columns: repeat(2, 1fr); 
+    justify-content: center; 
+    max-width: 100%;
 }
 
 li {
-  width: 20em;
-  box-sizing: border-box; 
-  margin: .5em;
-  padding: .5em;
-  justify-items: center; 
-  list-style-type: none;
-  border-radius: 1.5em;
-  font-weight: 400;
-  font-size: 1.4em;
-  background-color: rgba(255, 255, 255, 0.493);
-  backdrop-filter: blur(10px) saturate(150%) contrast(150%);
+    box-sizing: border-box; 
+    margin: .5em;
+    padding: .5em;
+    justify-items: center; 
+    list-style-type: none;
+    border-radius: 10px;
+    font-weight: 400;
+    font-size: 1.4em;
+    background-color: rgba(255, 255, 255, 0.493);
+    backdrop-filter: blur(10px) saturate(150%) contrast(150%);
+    max-width: 100%;
 }
 
 .recommended-heading {
-  font-size: 4rem;
-  font-weight: 600;
-  color: #000000;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
-  text-align: center;
+    font-size: 4rem;
+    font-weight: 600;
+    color: #000000;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .recommended-heading:hover {
-  text-shadow: 0 12px 12px rgba(18, 131, 131, 0.5);
+    text-shadow: 0 12px 12px rgba(18, 131, 131, 0.5);
 }
 
-/* Grid for the content cards */
-.recommended-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(30%, 1fr));
-  justify-items: center;
-  align-content: center;
-  width: 100%;
-  gap: 2em 0;
-  margin: 2em;
-  }
+.certs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    justify-items: center;
+    align-content: center;
+    max-width: 100%; 
+    gap: 2em ;
+    margin: 2em auto; 
+    padding: 0 1em; 
+}
 
 /* Cert styles */
 
 .cert-image {
-  aspect-ratio: 4/3;
-  width: 25vw;
-  border-radius: 20%;
-  background-color: #ffffff;
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-  border-style: solid;
-  border-color: rgba(219, 221, 222, 0.1);
-  padding: .5em;
+    aspect-ratio: 4/3;
+    max-width: 100%;
+    width: 27vw;
+    height: auto;
+    border-radius: 20%;
+    background-color: #ffffff;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    border-style: solid;
+    border-color: rgba(219, 221, 222, 0.1);
+    padding: .5em;
 }
 
 .cert-image:hover {
-  transform: translateY(-3px);
-  border-radius: 15px, 30px;
-  box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
-  transition: transform 0.2s ease-in-out;
-  border-image-slice: 1;
-  border-width: 3px;
-  border-style: solid;
-  border-color: rgba(47, 165, 208, 0.1);
+    transform: translateY(-3px);
+    border-radius: 15px, 30px;
+    box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
+    transition: transform 0.2s ease-in-out;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(47, 165, 208, 0.1);
 }
 
 
 /* Footer Styles */
 .footer {
-  color: #000000;
-  padding: 20px 0;
-  text-align: center;
-  width: 100%;
+    color: #000000;
+    padding: 20px 0;
+    text-align: center;
+    max-width: 100%; 
 }
 
-/* Container to hold footer content */
 .footer-container {
-  max-width: 1200px;
-  margin: 2em auto;
-  padding: 0 20px;
+    max-width: 1200px; 
+    margin: 2em auto;
+    padding: 0 20px; 
 }
 
 .copyright {
-  font-size: 20px;
-  margin-top: 10px;
+    font-size: 20px;
+    margin-top: 10px;
 }
 
 .back-to-top {
-  color: #000000;
-  text-decoration: none;
-  font-size: 14px;
-  display: block;
-  margin-top: 10px;
+    color: #000000;
+    text-decoration: none;
+    font-size: 14px;
+    display: block;
+    margin-top: 10px;
 }
 
 .back-to-top:hover {
-  color: rgba(0, 0, 0, 0.3);
+    color: rgba(0, 0, 0, 0.3);
 }
 
 /* carousel ----------------------------------------------------------- */
@@ -153,121 +216,128 @@ li {
 #carousel-container {
     display: flex;
     align-items: center;
-    width: 100%; /* Adjust as needed */
+    max-width: 100%; 
     justify-content: center;
+    padding: 0 10px; 
 }
 
 .image-slot {
-    /* Basic dimensions for all slots */
-    height: 400px;
+    height: 25vw; 
+    max-height: 400px; 
     background-size: cover;
     background-position: center;
-    transition: all 0.5s ease-in-out; /* Smooth transition for rotation */
+    transition: all 0.5s ease-in-out; 
     cursor: pointer;
     margin: 0 10px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    width: 300px; /* Smaller width for side images */
+    width: 25%; 
+    max-width: 300px; 
     opacity: 0.4;
     filter: blur(2px) grayscale(50%);
-    transform: scale(0.85); /* Slightly smaller */
+    transform: scale(0.85); 
 }
 
-/* Center Image (Large and Focused) */
 .image-slot.center {
-    width: 600px; /* Larger width for the center image */
+    width: 40%; 
+    max-width: 600px; 
     opacity: 1;
     filter: none;
     transform: scale(1);
     box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25);
 }
 
-/* Hover effects for rotation zones (side images) */
-/* The rotation is handled by JS, but a visual cue is helpful */
 .image-slot:hover {
     box-shadow: 0 8px 25px rgba(18, 131, 131, 0.4);
 }
 
-/* Optional: Better visual for the hover zones */
 .image-slot:first-child:hover {
-    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3); /* Left hover cue */
+    box-shadow: 0 8px 25px rgba(255, 0, 0, 0.3); 
 }
 
 .image-slot:last-child:hover {
-    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.3); /* Right hover cue */
+    box-shadow: 0 8px 25px rgba(0, 255, 0, 0.3); 
 }
+
 /* hobbies section */
 
 .hobbies-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1em;
-  margin: 2em;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 1em;
+    margin: 4em;
+    padding: 0 1em;
+    justify-items: center;
 }
 
 .hobbie-img {
-  width: 100%;
-  height: 100%;
+    max-width: 100%; 
+    height: auto;
+    display: block;
+    aspect-ratio: 1/1;
+    width: 30vw;
 }
 
 .hobbie-card:last-child {
-  justify-self: center;
-  align-self: center;
-  grid-column: 2/span 1;
+    justify-self: center;
+    align-self: center;
 }
 
 .hobbie-card {
-  position: relative;
-  border-radius: 40%;
-  z-index: 1;
-  overflow: hidden;
-  box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
-  transition: transform 0.2s ease-in-out;
-  border-style: solid;
-  border-color: rgba(242, 244, 245, 0.1);
-  aspect-ratio: 1 / 1;
-  width: 30vw;
-  background-color: rgba(0, 0, 0, 0.1);
+    position: relative;
+    border-radius: 40%;
+    z-index: 1;
+    overflow: hidden;
+    box-shadow: 0 12px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    border-style: solid;
+    border-color: rgba(242, 244, 245, 0.1);
+    aspect-ratio: 1 / 1;
+    width: 30vw;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 .hobbie-card:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
-  transition: transform 0.4s ease-in-out;
-  border-image-slice: 1;
-  border-width: 3px;
-  border-style: solid;
-  border-color: rgba(47, 165, 208, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
+    transition: transform 0.4s ease-in-out;
+    border-image-slice: 1;
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgba(47, 165, 208, 0.1);
 }
 
-/* Responsive adjustments */
+/* Mobile adjustments */
 @media screen and (orientation: portrait) {
 
-  li {
-    font-size: large;
-    padding: .2em;
-  }
+    li {
+        font-size: large;
+        padding: .2em;
+        max-width: 100%; 
+    }
 
-  .hobbie-card, .cert-image {
-    align-self: center;
-    min-width: 40vw;
-    flex-basis: 50%;
-  }
+    .hobbie-card, .cert-image {
+        align-self: center;
+        max-width: 100%; 
+    }
 
-  .recommended-grid {
-    display: grid; /* Enables CSS Grid layout */
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
-  }
+    .certs-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+    }
 
-  .card > img {
-    width: 40vw;
-  }
+    .card > img {
+        width: 100%; 
+    }
 
-  .hobbies-grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* Creates two equal-width columns */
-    justify-items: center;
-    align-items: center;
-  }
+    .hobbies-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); 
+        justify-items: center;
+        align-items: center;
+    }
 
+    .rec-top > img {
+      width: 30vw;
+    }
 }

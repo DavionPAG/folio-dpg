@@ -61,7 +61,7 @@ const images = [
     './media/spacex_pic.png',
 ];
 
-const container = document.getElementById('recommended-container');
+const container = document.getElementById('certs-container');
 const hobbieContainer = document.getElementById('hobbies-container')
 
 // Loop through the data and create a card for each item
