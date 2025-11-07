@@ -118,7 +118,6 @@ ul {
 li {
     box-sizing: border-box; 
     margin: .5em;
-    padding: .5em;
     justify-items: center; 
     list-style-type: none;
     border-radius: 10px;
@@ -127,6 +126,10 @@ li {
     background-color: rgba(255, 255, 255, 0.493);
     backdrop-filter: blur(10px) saturate(150%) contrast(150%);
     max-width: 100%;
+}
+
+li > p {
+    padding: 1em;
 }
 
 .recommended-heading {
@@ -222,8 +225,6 @@ li {
 }
 
 .image-slot {
-    height: 25vw; 
-    max-height: 400px; 
     background-size: cover;
     background-position: center;
     transition: all 0.5s ease-in-out; 
@@ -231,6 +232,7 @@ li {
     margin: 0 10px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    height: 25vw; 
     width: 25%; 
     max-width: 300px; 
     opacity: 0.4;
@@ -239,8 +241,7 @@ li {
 }
 
 .image-slot.center {
-    width: 40%; 
-    max-width: 600px; 
+    width: 60vw;
     opacity: 1;
     filter: none;
     transform: scale(1);
@@ -265,7 +266,6 @@ li {
     display: grid;
     grid-template-columns: repeat(2, 1fr); 
     gap: 1em;
-    margin: 4em;
     padding: 0 1em;
     justify-items: center;
 }
@@ -273,9 +273,9 @@ li {
 .hobbie-img {
     max-width: 100%; 
     height: auto;
-    display: block;
     aspect-ratio: 1/1;
     width: 30vw;
+    margin: 0, 20%, 0, 20%;
 }
 
 .hobbie-card:last-child {
@@ -295,6 +295,8 @@ li {
     aspect-ratio: 1 / 1;
     width: 30vw;
     background-color: rgba(0, 0, 0, 0.1);
+    border-style: solid;
+
 }
 
 .hobbie-card:hover {
@@ -302,7 +304,7 @@ li {
     box-shadow: 0 12px 12px rgba(18, 131, 131, 0.1);
     transition: transform 0.4s ease-in-out;
     border-image-slice: 1;
-    border-width: 3px;
+    border-width: 10px;
     border-style: solid;
     border-color: rgba(47, 165, 208, 0.1);
 }
@@ -316,28 +318,35 @@ li {
         max-width: 100%; 
     }
 
-    .hobbie-card, .cert-image {
+    .cert-image {
         align-self: center;
         max-width: 100%; 
+        width: 45vw;
     }
 
     .certs-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-    }
-
-    .card > img {
-        width: 100%; 
+        column-gap: 10px;
     }
 
     .hobbies-grid {
         display: grid;
         grid-template-columns: repeat(2, 1fr); 
-        justify-items: center;
+        justify-content: center;
         align-items: center;
     }
 
-    .rec-top > img {
-      width: 30vw;
+    .hobbie-card, .hobbie-img {
+        width: 40vw;
     }
+
+    .rec-top > img {
+        width: 30vw;
+    }
+
+    .image-slot {
+        height: 40vh;
+    }
+
 }
