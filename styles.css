@@ -27,9 +27,7 @@ article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
     display: block;
 }
-body {
-    line-height: 1;
-}
+
 ol, ul {
     list-style: none;
 }
@@ -45,7 +43,6 @@ table {
     border-collapse: collapse;
     border-spacing: 0;
 }
-
 
 html {
     box-sizing: border-box;
@@ -64,11 +61,12 @@ html {
 }
 
 body {
-    background-color: rgb(112,128,144);
+    background-color: rgb(202, 204, 208);
     font-family: 'Berlin Sans FB';
     margin: 0;
     max-width: 100%;
     overflow-x: hidden; 
+    line-height: 1;
 }
 
 .recommended-section,
@@ -200,18 +198,20 @@ li > p {
 .copyright {
     font-size: 20px;
     margin-top: 10px;
+    font-weight: bold;
 }
 
 .back-to-top {
     color: #000000;
     text-decoration: none;
-    font-size: 14px;
+    font-size: 16px;
     display: block;
     margin-top: 10px;
+    font-weight: bolder;
 }
 
 .back-to-top:hover {
-    color: rgba(0, 0, 0, 0.3);
+    color: rgba(25, 141, 243, 0.3);
 }
 
 /* carousel ----------------------------------------------------------- */
